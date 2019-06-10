@@ -1,0 +1,9 @@
+.finished > div > div {
+  text-decoration:line-through;
+}
+
+.category {
+  color: red;
+  font-size: 24px; 
+}
+

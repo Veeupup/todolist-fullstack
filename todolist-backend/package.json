@@ -1,0 +1,29 @@
+{
+  "name": "todolist-backend",
+  "version": "1.0.0",
+  "description": "backend for todo list",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "eslint": "./node_modules/.bin/eslint src --ext ts",
+    "dev": "node --inspect dist/",
+    "serve": "tsc --watch & nodemon dist/",
+    "debug": "tsc --watch & nodemon  --inspect dist/"
+  },
+  "dependencies": {
+    "@types/express": "^4.16.1",
+    "@typescript-eslint/parser": "^1.9.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.17",
+    "typescript": "^3.5.1",
+    "typescript-eslint-parser": "^22.0.0"
+  }
+}
