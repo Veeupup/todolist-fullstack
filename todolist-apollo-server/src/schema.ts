@@ -24,7 +24,7 @@ export const typeDefs = gql`
   type Mutation {
     createTodo(title: String, cate_id: Int): Todo
     deleteTodo(todo_id: Int): Todo
-    changeTodo(todo_id: Int): Todo
+    changeTodo(todo_id: ID): Todo
     updateTodo(todo_id: Int, title: String, cate_id: Int): Todo
     createCategory(name: String, description: String): Category
     deleteCategory(cate_id: Int): Category

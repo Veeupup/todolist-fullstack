@@ -8,6 +8,7 @@ const Query = {
   // get all todos
   todos: async () => {
     const todos = await instance.get("/todo");
+    console.log(todos)
     return todos.data;
   },
   // get all categories

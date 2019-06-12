@@ -14,18 +14,18 @@ INSERT INTO Categories (name) values ('xjtu');
 CREATE TABLE IF NOT EXISTS Todos (
 	todo_id int(8) NOT NULL primary key auto_increment,
 	title varchar(255) NOT NULL,
-	category_id int NOT NULL,
+	cate_id int NOT NULL,
   is_finished boolean NOT NULL DEFAULT FALSE,
-	FOREIGN KEY (category_id) REFERENCES Categories(cate_id)
+	FOREIGN KEY (cate_id) REFERENCES Categories(cate_id)
 );
 
-INSERT INTO Todos (title, category_id) values ('finish todo list', 1);
-INSERT INTO Todos (title, category_id) values ('do homework', 1);
-INSERT INTO Todos (title, category_id) values ('watch tvvvv', 1);
-INSERT INTO Todos (title, category_id) values ('thoughtworks', 2);
-INSERT INTO Todos (title, category_id) values ('do what you want', 2);
-INSERT INTO Todos (title, category_id) values ('curd curd', 3);
-INSERT INTO Todos (title, category_id) values ('how to create a OS from zero', 3);
-INSERT INTO Todos (title, category_id) values ('gogogogogo', 2);
-INSERT INTO Todos (title, category_id) values ('ffffffffffuuu', 3);
+INSERT INTO Todos (title, cate_id) values ('finish todo list', 1);
+INSERT INTO Todos (title, cate_id) values ('do homework', 1);
+INSERT INTO Todos (title, cate_id) values ('watch tvvvv', 1);
+INSERT INTO Todos (title, cate_id) values ('thoughtworks', 2);
+INSERT INTO Todos (title, cate_id) values ('do what you want', 2);
+INSERT INTO Todos (title, cate_id) values ('curd curd', 3);
+INSERT INTO Todos (title, cate_id) values ('how to create a OS from zero', 3);
+INSERT INTO Todos (title, cate_id) values ('gogogogogo', 2);
+INSERT INTO Todos (title, cate_id) values ('ffffffffffuuu', 3);
 
