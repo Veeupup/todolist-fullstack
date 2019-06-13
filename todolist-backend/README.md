@@ -12,6 +12,8 @@
 
 其中数据库 ORM 使用 typeorm。
 
+默认端口为 3000。
+
 ## 安装与运行
 
 首先 clone ，安装相关的依赖：
@@ -43,30 +45,30 @@ cp .env.template .env
 使用 tsc 编译：
 
 ```
-yarn run tsc
+yarn tsc
 ```
 
 使用 nodemon 运行项目：
 
 ```
-yarn run serve
+yarn start
 ```
 
 构建项目:
 
 ```
-yarn run build
+yarn build
 ```
 
 构建之后运行项目：
 
 ```
-yarn run dev
+yarn dev
 ```
 
 debug运行项目:
 
 ```
-yarn run debug
+yarn debug
 ```
 
