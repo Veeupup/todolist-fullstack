@@ -8,10 +8,26 @@ export const GET_TODOS = gql`
     title
     is_finished
     category {
+      cate_id
       name
     }
   }
 }`;
+
+// 根据类别获取 todo
+export const GET_TODO_BYCATE = gql`
+  query findTodo($cate_id: ID) {
+    todos(cate_id: $cate_id) {
+      todo_id
+      title
+      is_finished
+      category {
+        cate_id
+        name
+      }
+    }
+  }
+`;
 
 // 获取所有的类别
 export const GET_CATEGORIES = gql`
@@ -32,6 +48,7 @@ export const ADD_TODO = gql`
       title
       is_finished
       category {
+        cate_id
         name
       }
     }
@@ -51,4 +68,14 @@ export const UPDATE_TODO = gql`
   }
 }
 `;
+
+// 删除某个 Todo
+export const DELETE_TODO = gql`
+  mutation deleteTodo($todo_id: ID!) {
+    deleteTodo(todo_id: $todo_id) {
+      todo_id
+      title
+    }
+  }
+`
 

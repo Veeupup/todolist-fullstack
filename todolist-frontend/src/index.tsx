@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './pages/app';
 import About from './pages/about';
 import { Layout, Menu } from 'antd';
@@ -36,7 +35,7 @@ function AppRouter() {
               <Route path="/about" exact component={About} />
             </Content>
           </Layout>
-          <Footer>底部</Footer>
+          <Footer style={{ textAlign: "center" }}> <a href="https://www.thoughtworks.com/">@thoughtworks</a> </Footer>
         </Layout>
       </Router>
     </ApolloProvider>

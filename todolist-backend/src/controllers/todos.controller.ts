@@ -1,6 +1,7 @@
 import * as express from 'express';
 import Todo from "../models/todos";
 import connectDatabase from "../utils/connectDatabase";
+import { request } from 'https';
 
 class TodosController {
   public path = '/todo/';
@@ -66,10 +67,15 @@ class TodosController {
 
   // Get All
   getAllTodos = (request: express.Request, response: express.Response) => {
+    const cate_id = request.query.cate_id;
+    console.log(cate_id)
     this.connection.then(async connection => {
       let todoRepository = await connection.getRepository(Todo);
-      const allTodos = await todoRepository.find();
-      response.send(allTodos);
+      let allTodos = await todoRepository.find();
+      if(cate_id && cate_id!=0) {
+        allTodos = allTodos.filter(todo => todo.cate_id==cate_id)
+      }
+      response.send(allTodos.reverse());
     }).catch(error => {
       response.status(500).send(error);
     })
@@ -94,6 +100,7 @@ class TodosController {
       let todoRepository = await connection.getRepository(Todo);
       let todo = await todoRepository.findOne(id);
       await todoRepository.remove(todo);
+      todo.todo_id = id;
       response.status(200).send(todo);
     }).catch(error => {
       response.status(500).send(error);

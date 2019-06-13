@@ -2,7 +2,7 @@ import { gql } from "apollo-server"
 
 export const typeDefs = gql`
   type Query {
-    todos: [Todo]
+    todos(cate_id: ID): [Todo]
     todo(id: ID!): Todo
     categories: [Category]
     category(id: ID!): Category
@@ -23,7 +23,7 @@ export const typeDefs = gql`
 
   type Mutation {
     createTodo(title: String, cate_id: Int): Todo
-    deleteTodo(todo_id: Int): Todo
+    deleteTodo(todo_id: ID): Todo
     changeTodo(todo_id: ID): Todo
     updateTodo(todo_id: Int, title: String, cate_id: Int): Todo
     createCategory(name: String, description: String): Category

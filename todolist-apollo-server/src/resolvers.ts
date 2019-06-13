@@ -6,9 +6,13 @@ const instance = axios.create({
 
 const Query = {
   // get all todos
-  todos: async () => {
-    const todos = await instance.get("/todo");
-    console.log(todos)
+  todos: async ( _, { cate_id = 0 }) => {
+    let todos;
+    if(cate_id != 0) {
+      todos = await instance.get(`/todo?cate_id=${cate_id}`)
+    } else {
+      todos = await instance.get("/todo");
+    }
     return todos.data;
   },
   // get all categories
@@ -58,6 +62,7 @@ const Mutation = {
   // delete a todo
   deleteTodo: async (_, { todo_id }) => {
     let result;
+    
     await instance.delete(`/todo/${todo_id}`)
       .then(res => {
         result = res.data;
