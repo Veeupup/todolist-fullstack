@@ -28,7 +28,7 @@ class TaskInput extends React.Component<WithApolloClient<Props>, object> {
       </Option>])
 
     const selectBofore = (
-      <Select defaultValue="1" onChange={value => { cate_id = value }}>
+      <Select defaultValue="1" onChange={value => { cate_id = Number( value )}}>
         {categories}
       </Select>
     );

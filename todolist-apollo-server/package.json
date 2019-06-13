@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "serve": "tsc --watch & nodemon dist/",
+    "start": "tsc --watch & nodemon dist/",
     "debug": "tsc --watch & nodemon --inspect dist/"
   },
   "dependencies": {
