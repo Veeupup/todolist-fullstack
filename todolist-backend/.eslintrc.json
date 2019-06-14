@@ -1,18 +1,15 @@
 {
-    "env": {
-        "es6": true,
-        "node": true
-    },
-    "parser": "typescript-eslint-parser",
-    "extends": "eslint:recommended",
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
     "parserOptions": {
-        "ecmaVersion": 2018,
+        "project": "./tsconfig.json",
         "sourceType": "module"
     },
-    "rules": {
-    }
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
+    ]
 }
