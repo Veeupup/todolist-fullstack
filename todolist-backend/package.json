@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "eslint": "./node_modules/.bin/eslint src --ext ts",
+    "lint": "eslint src --ext ts",
     "dev": "node --inspect dist/",
     "start": "tsc --watch & nodemon dist/",
     "debug": "tsc --watch & nodemon  --inspect dist/"
@@ -24,6 +24,10 @@
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.17",
     "typescript": "^3.5.1",
-    "typescript-eslint-parser": "^22.0.0"
+    "typescript-eslint-parser": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2"
   }
 }
