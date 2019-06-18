@@ -1,15 +1,13 @@
-import express from 'express';
-import loggerMiddleware from './middlewares/middleware';
-import bodyParser from 'body-parser';
+import express from "express";
+import loggerMiddleware from "./middlewares/middleware";
+import bodyParser from "body-parser";
 import "reflect-metadata";
 
-
 class App {
-
   public app: express.Application;
   public port: number;
 
-  constructor(controllers, port) {
+  public constructor(controllers, port) {
     this.app = express();
     this.port = port;
 
@@ -18,26 +16,24 @@ class App {
   }
 
   // middlewares
-  private initializeMiddlewares() {
+  private initializeMiddlewares(): void {
     this.app.use(loggerMiddleware);
     this.app.use(bodyParser.json());
   }
 
   // initial controllers
-  private initializeControllers(controllers) {
-    controllers.forEach(controller => {
-      this.app.use('/', controller.router);
+  private initializeControllers(controllers: []): void {
+    controllers.forEach((controller: { router }): void => {
+      this.app.use("/", controller.router);
     });
   }
 
   // start listening
-  public listen() {
-    this.app.listen(this.port, () => {
+  public listen(): void {
+    this.app.listen(this.port, (): void => {
       console.log(`App is listening on the port ${this.port}`);
-    })
+    });
   }
-
-
 }
 
 export default App;

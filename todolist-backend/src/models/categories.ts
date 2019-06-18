@@ -3,14 +3,12 @@ import "reflect-metadata";
 
 @Entity()
 export default class Categories {
-
   @PrimaryGeneratedColumn()
-  cate_id: number;
+  public cate_id: number;
 
   @Column()
-  name: String
+  public name: string;
 
   @Column()
-  description: String
-
+  public description: string;
 }
